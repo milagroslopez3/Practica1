@@ -7,7 +7,7 @@ total_score = 0
 while True:
     for clave in categories:
         print(clave)
-    cat = (input("Elegir una categoria")).lower()
+    cat = (input("Elegir una categoria")).lower().strip()
     available =  [p for p in categories[cat] if p not in used_words]
     if not available:
         print(f"¡Ya usaste todas las palabras de '{cat}'! Elegí otra.")
@@ -37,7 +37,7 @@ while True:
             break
         print(f"Intentos restantes: {attempts}")
         print(f"Letras usadas: {', '.join(guessed)}")
-        letter = input("Ingresá una letra: ").lower()
+        letter = input("Ingresá una letra: ").lower().strip()
         if len(letter) != 1 or not letter.isalpha():
             print ('Entrada no valida')
             continue
