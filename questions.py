@@ -8,6 +8,9 @@ while True:
     for clave in categories:
         print(clave)
     cat = (input("Elegir una categoria")).lower().strip()
+    if (cat not in categories):
+        print("Categoria no valida,elija de nuevo")
+        continue
     available =  [p for p in categories[cat] if p not in used_words]
     if not available:
         print(f"¡Ya usaste todas las palabras de '{cat}'! Elegí otra.")
